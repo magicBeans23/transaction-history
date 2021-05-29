@@ -1,0 +1,53 @@
+spring:
+  application:
+    name: transaction-history
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none
+  h2:
+    console:
+      enabled: true
+
+server:
+  port: 8080
+
+info:
+  app: wallet transaction history
+  java:
+    version: 8
+  type: Spring Boot v2.4.6
+
+management:
+  info:
+    build:
+      enabled: true
+    env: true
+  endpoints:
+    web:
+      exposure:
+        include: health,info,env,loggers,metrics
+  endpoint:
+    env:
+      keys-to-sanitize: username,password,database.url
+    health:
+      show-details: always
+    loggers:
+      enabled: true
+
+logging:
+  level:
+    org:
+      springframework:
+        web:
+          servlet:
+            DispatcherServlet: DEBUG
+    com:
+      demo:
+        walet:
+          transactionhistory: DEBUG
