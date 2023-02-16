@@ -20,12 +20,12 @@ public class TransactionsService {
     TransactionsRepo repo;
 
     public List<Transactions> getTransactionsAfter(Integer walletId, Date startDate){
-        return repo.findByWalletIdAndtransactionTimestampAfter(walletId, startDate, DEFAULT_PAGE_REQUEST).getContent();
+        return repo.findByWalletIdAndTransactionTimestampAfter(walletId, startDate, DEFAULT_PAGE_REQUEST).getContent();
     }
 
     public List<Transactions> getTransactionsBetween(Integer waletId, Date startDate, Date endDate, PageInfo pageInfo){
         //not using the page info, should be used to build pageable here.
-        return repo.findByWalletIdAndtransactionTimestampBetween(waletId, startDate, endDate, DEFAULT_PAGE_REQUEST).getContent();
+        return repo.findByWalletIdAndTransactionTimestampBetween(waletId, startDate, endDate, DEFAULT_PAGE_REQUEST).getContent();
 
     }
 

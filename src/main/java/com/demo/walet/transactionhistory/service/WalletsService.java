@@ -5,7 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
 
+@Service
 public class WalletsService {
 
     private static Pageable DEFAULT_PAGE_REQUEST= PageRequest.of(0,1, Sort.by("transactionTimestamp").descending());

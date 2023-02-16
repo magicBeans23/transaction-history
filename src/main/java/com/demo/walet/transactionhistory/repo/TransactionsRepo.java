@@ -15,7 +15,7 @@ public interface TransactionsRepo extends JpaRepository<Transactions, Integer> {
     Page<Transactions> findByTransactionId(Integer transactionId, Pageable pageable);
     Page<Transactions> findByWalletIdAndTransactionId(Integer wallerId, Integer transactionId, Pageable pageable);
     //Page<Transactions> findByWalletIdAndTransactionType(Integer walletId, Integer transactiontype, Pageable pageable);
-    Page<Transactions> findByWalletIdAndtransactionTimestampBetween(Integer walletId, Date startDate, Date endDate, Pageable pageable);
-    Page<Transactions> findByWalletIdAndtransactionTimestampAfter(Integer walletId, Date startDate,Pageable pageable);
+    Page<Transactions> findByWalletIdAndTransactionTimestampBetween(Integer walletId, Date startDate, Date endDate, Pageable pageable);
+    Page<Transactions> findByWalletIdAndTransactionTimestampAfter(Integer walletId, Date startDate,Pageable pageable);
 
 }

@@ -26,6 +26,11 @@ public class TranHistoryController {
     @Autowired
     HistoryService historyService;
 
+    @GetMapping(value ="welcome", name ="welcome", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> welcome(){
+        return ResponseEntity.status(HttpStatus.OK).body("welcome");
+    }
+
     @GetMapping(value = "balance", name="get wallet balance", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<BalanceResponse> getBalance(@PathVariable Integer walletId) throws WalletNotFoundException {
         MDC.put("request_reference",""+System.currentTimeMillis());
